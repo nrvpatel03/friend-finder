@@ -40,7 +40,8 @@ htmlRoutes.htmlRoutes.goHome(app,path);
 htmlRoutes.htmlRoutes.goSurvey(app,path);
 
 //Api Routes
-
+//go to api.
+apiRoutes.apiRoutes.goApiFriends(app,friendsList);
 
 
 
