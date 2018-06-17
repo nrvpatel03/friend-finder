@@ -2,8 +2,6 @@
 var path = require("path");
 var bodyParser = require("body-parser");
 var express = require("express");
-var htmlRoutes = require("./routing/htmlRoutes");
-var apiRoutes = require("./routing/apiRoutes");
 
 var app = express();
 var PORT = process.env.PORT || 3000;
@@ -33,15 +31,9 @@ var friendsList = [
 
 //Routes
 //Html Routes
+require("./routing/apiRoutes")(app, friendsList);
+require("./routing/htmlRoutes")(app, path);
 
-//go home
-htmlRoutes.htmlRoutes.goHome(app,path);
-//go to survey
-htmlRoutes.htmlRoutes.goSurvey(app,path);
-
-//Api Routes
-//go to api.
-apiRoutes.apiRoutes.goApiFriends(app,friendsList);
 
 
 
