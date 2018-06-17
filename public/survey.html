@@ -20,113 +20,117 @@
         </div>
         <form>
             <div class="form-group">
+                <label for="nameinputId">Enter your name</label>
+                <input type="text" class="form-control" id="nameinputId">
+            </div>
+            <div class="form-group">
                 <label for="Q1">How comfortable are you in social situations?</label>
                 <select class="form-control" id="Q1">
                     <option value="" selected disabled>Please Select</option>
-                    <option>1 (Uncomfortable)</option>
+                    <option value="1">1 (Uncomfortable)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Comfortable)</option>
+                    <option value="5">5 (Comfortable)</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="Q2">How often do you go hiking?</label>
                 <select class="form-control" id="Q2">
                     <option value="" selected disabled>Please Select</option>
-                    <option>1 (Not at all)</option>
+                    <option value="1">1 (Not at all)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Very Often)</option>
+                    <option value="5">5 (Very Often)</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="Q3">How often do you go to the movies?</label>
                 <select class="form-control" id="Q3">
                     <option value="" selected disabled>Please Select</option>
-                    <option>1 (Not at all)</option>
+                    <option value="1">1 (Not at all)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Very Often)</option>
+                    <option value="5">5 (Very Often)</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="Q4">How much do you like animals?</label>
                 <select class="form-control" id="Q4">
                     <option value="" selected disabled>Please Select</option>
-                    <option>1 (Not at all)</option>
+                    <option value="1">1 (Not at all)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (I love them!)</option>
+                    <option value="5">5 (I love them!)</option>
                 </select>
             </div>
             <div class="form-group">
-                <label for="Q5">How much do you like to watch TV shows?</label>
+                <label for="Q5">Do you like to watch TV shows?</label>
                 <select class="form-control" id="Q5">
                     <option value="" selected disabled>Please Select</option>
-                    <option>1 (Not at all)</option>
+                    <option value="1">1 (Not at all)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Yes all the time!)</option>
+                    <option value="5">5 (Yes!)</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="Q6">How much do you like to dance?</label>
                 <select class="form-control" id="Q6">
                     <option value="" selected disabled>Please Select</option>
-                    <option>1 (I hate dancing)</option>
+                    <option value="1">1 (I hate dancing)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (I LOVE TO DANCE!)</option>
+                    <option value="5">5 (I LOVE TO DANCE!)</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="Q7">How often do you go camping?</label>
                 <select class="form-control" id="Q7">
                     <option value="" selected disabled>Please Select</option>
-                    <option>1 (Not at all)</option>
+                    <option value="1">1 (Not at all)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (All the time)</option>
+                    <option value="5">5 (All the time)</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="Q8">How religious are you?</label>
                 <select class="form-control" id="Q8">
                     <option value="" selected disabled>Please Select</option>
-                    <option>1 (Not at all)</option>
+                    <option value="1">1 (Not at all)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Very religious)</option>
+                    <option value="5">5 (Very religious)</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="Q9">How do you feel about spiders?</label>
                 <select class="form-control" id="Q9">
                     <option value="" selected disabled>Please Select</option>
-                    <option>1 (Hate them)</option>
+                    <option value="1">1 (Hate them)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Love them)</option>
+                    <option value="5">5 (Love them)</option>
                 </select>
             </div>
             <div class="form-group">
                 <label for="Q10">How do you feel about romantic dates?</label>
                 <select class="form-control" id="Q10">
                     <option value="" selected disabled>Please Select</option>
-                    <option>1 (Hate them)</option>
+                    <option value="1">1 (Hate them)</option>
                     <option>2</option>
                     <option>3</option>
                     <option>4</option>
-                    <option>5 (Love them)</option>
+                    <option value="5">5 (Love them)</option>
                 </select>
             </div>
         </form>
@@ -138,8 +142,32 @@
     </div>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        $("#submitButtonId").click(function(){
+            event.preventDefault();
+            var scoresArr = [];
+            for(var i = 1; i<11; i++){
+                scoresArr.push($("#Q" + i).val().trim().toString());
+            }
+            var newSubmission = {
+                name: $("#nameinputId").val().trim(),
+                scores: scoresArr
+            }
+            //do get method for all objects first add that to an array
+            //post
+            $.post("/api/friends",newSubmission,function(data){
+                console.log("whatever");
+                //logic for finding match here with data.
+            });
+            //clear forms after submitting
+            $("#nameinputId").val("");
+            for(var i = 1; i<11; i++){
+                $("#Q" + i).val("");
+            }
+        })
+    </script>
 </body>
 </html>

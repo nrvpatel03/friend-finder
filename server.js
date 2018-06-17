@@ -9,30 +9,14 @@ var PORT = process.env.PORT || 3000;
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-//data
-var friendsList = [
-    {
-        name: "Person1",
-        scores: ["3","4","2","1","4","5","3","4","5","2"]
-    },
-    {
-        name: "Person2",
-        scores: ["5","2","3","3","5","2","1","4","5","2"]
-    },
-    {
-        name: "Person3",
-        scores: ["2","4","5","2","3","4","5","3","2","5"]
-    },
-    {
-        name: "Person4",
-        scores: ["4","3","4","1","4","5","2","1","2","3"]
-    }
-]
+//get data
+var data = require("./app/data/friends.js");
 
 //Routes
-//Html Routes
-require("./routing/apiRoutes")(app, friendsList);
+//Html and api routes
+require("./routing/apiRoutes")(app, data);
 require("./routing/htmlRoutes")(app, path);
+
 
 
 
