@@ -140,22 +140,22 @@
         <br><br>
         <div class="modal" id="myModal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title">Your Match Has Been Found!</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Your Match Has Been Found!</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p id="modalTxt"></p>
+                        <div>
+                            <img id="imageId" style="width: 140px; height: 140px;">
+                        </div>
+                    </div>
                 </div>
-                <div class="modal-body">
-                  <p id="modalTxt"></p>
-                  <div>
-                      <img id="imageId" style="width: 140px; height: 140px;">
-                  </div>
-                </div>
-              </div>
             </div>
-          </div>
+        </div>
         <p><a href="/api/friends" target="_blank">API Friends List</a> | <a href="https://github.com/nrvpatel03/friend-finder" target="_blank">GitHub Repo</a></p>
         <br>  
     </div>
@@ -166,20 +166,25 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script>
         $("#submitButtonId").click(function(){
+
             event.preventDefault();
+
             var scoresArr = [];
-            for(var i = 1; i<11; i++){
+
+            for(var i = 1; i < 11; i++){
                 scoresArr.push(parseInt($("#Q" + i).val().trim()));
             }
+
             var newSubmission = {
                 name: $("#nameinputId").val().trim(),
                 scores: scoresArr,
                 image: $("#imageinputId").val().trim()
             }
+
             var currFriendsScores = [];
             var currFriendsNames = [];
             var currFriendsImages = [];
-            //do get method for all objects first add that to an array
+            
             $.get("/api/friends", function(data){
                 for(var i = 0; i<data.length; i++){
                     currFriendsScores.push(data[i].scores);
@@ -188,31 +193,32 @@
                 }
             })
             
-            //post
+            
             $.post("/api/friends",newSubmission,function(data){
-                //find your friend
-                //iterate through
-                
+
                 var diffArray = []; 
+
                 for(var i = 0; i < currFriendsScores.length; i++){
-                    //position in array of objects
                     var diff = 0;
+
                     for(var k = 0; k < currFriendsScores[i].length; k++){
                         diff += Math.abs(currFriendsScores[i][k] - data.scores[k]);
                     }
+
                     diffArray.push(diff);
                 }
-                //find min of diffArray and get that index
+                
                 var smallestDifferenceIn = diffArray.indexOf(Math.min(...diffArray));
                 var match = currFriendsNames[smallestDifferenceIn];
                 var image = currFriendsImages[smallestDifferenceIn];
-                //show modal
+                
                 $("#myModal").modal("toggle");
                 $("#modalTxt").text("Your Match is: " + match);
                 $("#imageId").attr("src", image);
             });
-            //clear forms after submitting
+            
             $("#nameinputId").val("");
+
             for(var i = 1; i<11; i++){
                 $("#Q" + i).val("");
             }

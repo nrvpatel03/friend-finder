@@ -1,5 +1,4 @@
 
-//data ACTUAL
 module.exports = [
     {
         name: "John",
