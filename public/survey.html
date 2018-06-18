@@ -134,6 +134,21 @@
         <br><br>
         <a id="submitButtonId" class="btn-lg btn-block btn-primary text-white text-center">Submit</a>
         <br><br>
+        <div class="modal" id="myModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Your Match Has Been Found!</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p id="modalTxt"></p>
+                </div>
+              </div>
+            </div>
+          </div>
         <p><a href="/api/friends" target="_blank">API Friends List</a> | <a href="https://github.com/nrvpatel03/friend-finder" target="_blank">GitHub Repo</a></p>
         <br>  
     </div>
@@ -180,7 +195,9 @@
                 //find min of diffArray and get that index
                 var smallestDifferenceIn = diffArray.indexOf(Math.min(...diffArray));
                 var match = currFriendsNames[smallestDifferenceIn];
-                
+                //show modal
+                $("#myModal").modal("toggle");
+                $("#modalTxt").text("Your Match is: " + match);
             });
             //clear forms after submitting
             $("#nameinputId").val("");
